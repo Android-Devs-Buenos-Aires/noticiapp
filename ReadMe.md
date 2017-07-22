@@ -15,3 +15,5 @@ Noticiapp is a simple application that was used for a Kotlin workshop hosted by 
  [adevsBAMeetup]: <http://meetup.com/es-ES/Android-Devs-Buenos-Aires>
  [adevsBATwitter]: <https://twitter.com/AndroidDevsBSAS>
  [newsapi]: <https://newsapi.org/>
+ 
+![Screenshot](https://thumbs.gfycat.com/RemoteFinishedJoey-size_restricted.gif?raw=true)
