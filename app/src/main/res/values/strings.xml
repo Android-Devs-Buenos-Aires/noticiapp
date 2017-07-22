@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Noticiapp</string>
+    <string name="title_news">News</string>
+    <string name="title_about">About</string>
+    <string name="edit_source">Edit source</string>
+    <string name="techcrunch">TechCrunch</string>
+    <string name="no_browser_message">Sorry, you don\'t have an application can handle this request.
+        Please install a web browser and retry
+    </string>
+    <string name="news_image_cd">News image</string>
+    <string name="source_image_cd">Source image</string>
+</resources>
