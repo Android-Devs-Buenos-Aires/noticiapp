@@ -22,7 +22,7 @@ import com.ezanetta.simplenews.domain.responses.ArticlesResponse
 import com.ezanetta.simplenews.networking.NewsApiClient
 import com.ezanetta.simplenews.ui.activities.MainActivity
 import com.ezanetta.simplenews.ui.adapters.ArticlesAdapter
-import com.ezanetta.simplenews.ui.adapters.BottomItemDecoration
+import com.ezanetta.simplenews.ui.adapters.ArticlesItemDecoration
 import com.ezanetta.simplenews.utils.ARTICLES_KEY
 import com.ezanetta.simplenews.utils.CURRENT_SOURCE_KEY
 import com.ezanetta.simplenews.utils.LIST_STATE_KEY
@@ -138,7 +138,7 @@ class ArticlesFragment : Fragment(), Callback<ArticlesResponse>, SourcesFragment
         with(news) {
             layoutManager = linearLayoutManager
             val space = activity.resources.getDimensionPixelOffset(R.dimen.mid_size)
-            news.addItemDecoration(BottomItemDecoration(space))
+            news.addItemDecoration(ArticlesItemDecoration(space))
         }
     }
 
