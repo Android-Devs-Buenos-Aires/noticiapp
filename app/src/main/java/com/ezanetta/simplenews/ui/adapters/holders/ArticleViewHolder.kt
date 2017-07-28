@@ -9,9 +9,6 @@ import com.ezanetta.simplenews.domain.model.Article
 import com.ezanetta.simplenews.utils.extensions.loadUrl
 import com.ezanetta.simplenews.utils.extensions.toDateWithFormat
 
-/**
- * Created by rmuhamed on 28/7/17.
- */
 class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private var image: ImageView = view.findViewById(R.id.image) as ImageView

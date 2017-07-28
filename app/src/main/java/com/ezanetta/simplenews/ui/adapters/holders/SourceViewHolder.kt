@@ -8,9 +8,6 @@ import com.ezanetta.simplenews.R
 import com.ezanetta.simplenews.domain.model.Source
 import com.ezanetta.simplenews.utils.extensions.loadUrl
 
-/**
- * Created by rmuhamed on 27/7/17.
- */
 class SourceViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val image: ImageView = view.findViewById(R.id.image) as ImageView
