@@ -2,17 +2,13 @@ package com.ezanetta.simplenews.ui.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import com.ezanetta.simplenews.R
 import com.ezanetta.simplenews.domain.model.Article
-import com.ezanetta.simplenews.utils.extensions.loadUrl
-import com.ezanetta.simplenews.utils.extensions.toDateWithFormat
+import com.ezanetta.simplenews.ui.adapters.holders.ArticleViewHolder
 import java.util.*
 
-class ArticlesAdapter(val listener: (Article) -> Unit) : RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>() {
+class ArticlesAdapter(val listener: (Article) -> Unit) : RecyclerView.Adapter<ArticleViewHolder>() {
 
     private var articles: List<Article> = ArrayList()
 
@@ -39,20 +35,5 @@ class ArticlesAdapter(val listener: (Article) -> Unit) : RecyclerView.Adapter<Ar
     fun cleanArticles() {
         articles = ArrayList()
         notifyDataSetChanged()
-    }
-
-    class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-        private var image: ImageView = view.findViewById(R.id.image) as ImageView
-        private var title: TextView = view.findViewById(R.id.title) as TextView
-        private var description: TextView = view.findViewById(R.id.description) as TextView
-        private var date: TextView = view.findViewById(R.id.date) as TextView
-
-        fun bindArticle(article: Article) {
-            image.loadUrl(article.image)
-            title.text = article.title
-            description.text = article.description
-            date.text = article.publishedAt?.toDateWithFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", "MMM dd")
-        }
     }
 }

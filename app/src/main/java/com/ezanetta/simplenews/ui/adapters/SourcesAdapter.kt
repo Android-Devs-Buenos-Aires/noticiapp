@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.ezanetta.simplenews.R
 import com.ezanetta.simplenews.domain.model.Source
+import com.ezanetta.simplenews.ui.adapters.holders.SourceViewHolder
 
 class SourcesAdapter(val sources: List<Source>,
                      val listener: (Source) -> Unit) :
