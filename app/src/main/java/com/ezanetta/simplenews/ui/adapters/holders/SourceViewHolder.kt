@@ -1,4 +1,4 @@
-package com.ezanetta.simplenews.ui.adapters
+package com.ezanetta.simplenews.ui.adapters.holders
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
