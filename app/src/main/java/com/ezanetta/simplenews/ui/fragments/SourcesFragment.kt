@@ -24,8 +24,11 @@ import retrofit2.Response
 import java.util.*
 
 
-class SourcesFragment : DialogFragment(), Callback<SourcesResponse> {
-
+class SourcesFragment :
+        DialogFragment(),
+        Callback<SourcesResponse>,
+        SourcesAdapter.OnSourcesAction {
+    
     private lateinit var sources: RecyclerView
     private lateinit var loading: ProgressBar
     private val TAG: String = SourcesFragment::class.java.simpleName
@@ -94,7 +97,7 @@ class SourcesFragment : DialogFragment(), Callback<SourcesResponse> {
     private fun getSources() = NewsApiClient.newsApi.getSources().enqueue(this)
 
     private fun setupSources(sourcesList: List<Source>) {
-        val sourcesAdapter = SourcesAdapter(sourcesList, { sourceListener(it) })
+        val sourcesAdapter = SourcesAdapter(sourcesList, this)
 
         with(sources) {
             layoutManager = linearLayoutManager
@@ -103,6 +106,10 @@ class SourcesFragment : DialogFragment(), Callback<SourcesResponse> {
 
         restorePosition()
         hideLoading()
+    }
+
+    override fun onClickSource(source: Source) {
+        sourceListener(source)
     }
 
     private fun restorePosition() = linearLayoutManager.onRestoreInstanceState(listState)

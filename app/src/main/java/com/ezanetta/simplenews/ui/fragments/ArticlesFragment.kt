@@ -31,7 +31,11 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class ArticlesFragment : Fragment(), Callback<ArticlesResponse>, SourcesFragment.SourcesActions {
+class ArticlesFragment :
+        Fragment(),
+        Callback<ArticlesResponse>,
+        SourcesFragment.SourcesActions,
+        ArticlesAdapter.OnArticlesAction {
 
     private val TAG: String = ArticlesFragment::class.java.simpleName
     private lateinit var news: RecyclerView
@@ -143,9 +147,11 @@ class ArticlesFragment : Fragment(), Callback<ArticlesResponse>, SourcesFragment
     }
 
     private fun setupAdapter() {
-        articlesAdapter = ArticlesAdapter { openBrowser(it.url) }
+        articlesAdapter = ArticlesAdapter(this)
         restorePosition()
     }
+
+    override fun onClickArticle(article: Article) = openBrowser(article.url)
 
     private fun restorePosition() = linearLayoutManager.onRestoreInstanceState(listState)
 

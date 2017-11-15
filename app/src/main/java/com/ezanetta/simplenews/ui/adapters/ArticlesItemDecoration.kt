@@ -4,7 +4,7 @@ import android.graphics.Rect
 import android.support.v7.widget.RecyclerView
 import android.view.View
 
-class ArticlesItemDecoration(val space: Int) : RecyclerView.ItemDecoration() {
+class ArticlesItemDecoration(private val space: Int) : RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView,
                                 state: RecyclerView.State) {
@@ -15,12 +15,12 @@ class ArticlesItemDecoration(val space: Int) : RecyclerView.ItemDecoration() {
         }
     }
 
-    fun setupRectFirst(outRect: Rect, space: Int) {
+    private fun setupRectFirst(outRect: Rect, space: Int) {
         outRect.top = space
         outRect.bottom = space
     }
 
-    fun setupRectTopAndBottom(outRect: Rect, space: Int) {
+    private fun setupRectTopAndBottom(outRect: Rect, space: Int) {
         outRect.bottom = space
     }
 }

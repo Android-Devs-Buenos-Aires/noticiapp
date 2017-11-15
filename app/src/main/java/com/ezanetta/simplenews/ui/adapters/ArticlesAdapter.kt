@@ -8,14 +8,18 @@ import com.ezanetta.simplenews.domain.model.Article
 import com.ezanetta.simplenews.ui.adapters.holders.ArticleViewHolder
 import java.util.*
 
-class ArticlesAdapter(val listener: (Article) -> Unit) : RecyclerView.Adapter<ArticleViewHolder>() {
+class ArticlesAdapter(private val listener: OnArticlesAction) : RecyclerView.Adapter<ArticleViewHolder>() {
 
     private var articles: List<Article> = ArrayList()
+
+    interface OnArticlesAction {
+        fun onClickArticle(article: Article)
+    }
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         with(articles[position]) {
             holder.bindArticle(this)
-            holder.itemView.setOnClickListener { listener(this) }
+            holder.itemView.setOnClickListener { listener.onClickArticle(this) }
         }
     }
 

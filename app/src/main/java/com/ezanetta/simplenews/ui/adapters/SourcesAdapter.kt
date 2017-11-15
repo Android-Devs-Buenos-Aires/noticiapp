@@ -7,14 +7,18 @@ import com.ezanetta.simplenews.R
 import com.ezanetta.simplenews.domain.model.Source
 import com.ezanetta.simplenews.ui.adapters.holders.SourceViewHolder
 
-class SourcesAdapter(val sources: List<Source>,
-                     val listener: (Source) -> Unit) :
+class SourcesAdapter(private val sources: List<Source>,
+                     private val listener: OnSourcesAction) :
         RecyclerView.Adapter<SourceViewHolder>() {
+
+    interface OnSourcesAction {
+        fun onClickSource(source: Source)
+    }
 
     override fun onBindViewHolder(holder: SourceViewHolder, position: Int) {
         with(sources[position]) {
             holder.bindSource(this)
-            holder.itemView.setOnClickListener { listener(this) }
+            holder.itemView.setOnClickListener { listener.onClickSource(this) }
         }
     }
 
