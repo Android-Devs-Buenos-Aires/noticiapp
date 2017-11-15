@@ -10,8 +10,8 @@ import com.ezanetta.simplenews.utils.extensions.loadUrl
 
 class SourceViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    private val image: ImageView = view.findViewById(R.id.image) as ImageView
-    private val title: TextView = view.findViewById(R.id.title) as TextView
+    private val image: ImageView = view.findViewById(R.id.image)
+    private val title: TextView = view.findViewById(R.id.title)
 
     fun bindSource(source: Source) {
         image.loadUrl(source.getLogoImage())

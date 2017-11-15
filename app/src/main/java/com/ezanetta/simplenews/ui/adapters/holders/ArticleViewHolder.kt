@@ -11,10 +11,10 @@ import com.ezanetta.simplenews.utils.extensions.toDateWithFormat
 
 class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    private var image: ImageView = view.findViewById(R.id.image) as ImageView
-    private var title: TextView = view.findViewById(R.id.title) as TextView
-    private var description: TextView = view.findViewById(R.id.description) as TextView
-    private var date: TextView = view.findViewById(R.id.date) as TextView
+    private var image: ImageView = view.findViewById(R.id.image)
+    private var title: TextView = view.findViewById(R.id.title)
+    private var description: TextView = view.findViewById(R.id.description)
+    private var date: TextView = view.findViewById(R.id.date)
 
     fun bindArticle(article: Article) {
         image.loadUrl(article.image)

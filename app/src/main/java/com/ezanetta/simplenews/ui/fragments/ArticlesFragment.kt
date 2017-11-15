@@ -73,8 +73,8 @@ class ArticlesFragment :
         setHasOptionsMenu(true)
 
         with(view) {
-            news = findViewById(R.id.news) as RecyclerView
-            loading = findViewById(R.id.progress) as ProgressBar
+            news = findViewById(R.id.news)
+            loading = findViewById(R.id.progress)
         }
 
         setupNewsRecyclerView()

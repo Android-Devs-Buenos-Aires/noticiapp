@@ -28,7 +28,7 @@ class SourcesFragment :
         DialogFragment(),
         Callback<SourcesResponse>,
         SourcesAdapter.OnSourcesAction {
-    
+
     private lateinit var sources: RecyclerView
     private lateinit var loading: ProgressBar
     private val TAG: String = SourcesFragment::class.java.simpleName
@@ -61,8 +61,8 @@ class SourcesFragment :
         val view = inflater!!.inflate(R.layout.fragment_sources, container, false)
 
         with(view) {
-            sources = findViewById(R.id.sources) as RecyclerView
-            loading = findViewById(R.id.progress) as ProgressBar
+            sources = findViewById(R.id.sources)
+            loading = findViewById(R.id.progress)
         }
 
         return view
