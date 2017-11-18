@@ -8,6 +8,7 @@ import com.ezanetta.simplenews.R
 import com.ezanetta.simplenews.domain.model.Article
 import com.ezanetta.simplenews.utils.extensions.loadUrl
 import com.ezanetta.simplenews.utils.extensions.toDateWithFormat
+import java.text.ParseException
 
 class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -20,6 +21,11 @@ class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         image.loadUrl(article.image)
         title.text = article.title
         description.text = article.description
-        date.text = article.publishedAt?.toDateWithFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", "MMM dd")
+
+        try {
+            date.text = article.publishedAt?.toDateWithFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", "MMM dd")
+        } catch (e: ParseException) {
+            date.visibility = View.GONE
+        }
     }
 }
