@@ -8,10 +8,9 @@ import retrofit2.http.Query
 
 interface NewsApi {
 
-    @GET("/v1/articles")
-    fun getNews(@Query("source") source: String,
-                @Query("sortBy") sortBy: String): Call<ArticlesResponse>
+    @GET("/v2/top-headlines")
+    fun getNews(@Query("sources") source: String): Call<ArticlesResponse>
 
-    @GET("/v1/sources")
+    @GET("/v2/sources")
     fun getSources(@Query("language") string: String = "en"): Call<SourcesResponse>
 }

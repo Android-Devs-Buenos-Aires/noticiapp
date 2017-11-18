@@ -64,7 +64,7 @@ class ArticlesFragment :
         articlesAdapter.cleanArticles()
         showLoading()
         resetState()
-        getNews(source.id, source.getSortBy())
+        getNews(source.id)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
@@ -93,7 +93,7 @@ class ArticlesFragment :
             }
             setupNews(articles)
         } else {
-            getNews(currentSource.name, currentSource.getSortBy())
+            getNews(currentSource.name)
         }
 
         mainActivity = (activity as MainActivity).apply {
@@ -134,8 +134,8 @@ class ArticlesFragment :
         }
     }
 
-    private fun getNews(source: String, sortBy: String) {
-        NewsApiClient.newsApi.getNews(source, sortBy).enqueue(this)
+    private fun getNews(source: String) {
+        NewsApiClient.newsApi.getNews(source).enqueue(this)
     }
 
     private fun setupNewsRecyclerView() {

@@ -6,20 +6,17 @@ import com.google.gson.annotations.SerializedName
 
 data class Source(@SerializedName("id") val id: String,
                   @SerializedName("name") val name: String,
-                  @SerializedName("url") val url: String,
-                  @SerializedName("sortBysAvailable") val sortByAvailable: List<String>) : Parcelable {
+                  private @SerializedName("url") val url: String): Parcelable {
 
     constructor(parcel: Parcel) : this(
             parcel.readString(),
             parcel.readString(),
-            parcel.readString(),
-            parcel.createStringArrayList())
+            parcel.readString())
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
         parcel.writeString(name)
         parcel.writeString(url)
-        parcel.writeStringList(sortByAvailable)
     }
 
     override fun describeContents(): Int {
@@ -36,13 +33,9 @@ data class Source(@SerializedName("id") val id: String,
         }
 
         fun getDefaultSource(): Source {
-            return Source("techcrunch", "TechCrunch", "http://techcrunch.com",
-                    arrayListOf("top", "latest"))
+            return Source("techcrunch", "TechCrunch", "http://techcrunch.com")
         }
     }
 
     fun getLogoImage(): String = "https://icons.better-idea.org/icon?url=$url&size=70..120..200"
-
-    fun getSortBy(): String = sortByAvailable.firstOrNull { it == "latest" } ?: sortByAvailable[0]
-
 }
