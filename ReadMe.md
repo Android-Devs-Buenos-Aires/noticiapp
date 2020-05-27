@@ -1,14 +1,19 @@
-# NOTICIAPP
+# Android Devs Buenos Aires
+
+Repositorio relacionado a uno de los tres workshops de **Introducción a Kotlin** realizados.
+
+### Descripción del Repositorio
+#### NOTICIAPP
 
 Noticiapp is a simple application that was used for a Kotlin workshop hosted by Android Devs Buenos Aires. This app is powered by [NewsApi]
 
-#### Android libraries used in this project
+##### Android libraries used in this project
   - Retrofit / Glide / Okhttp
 
-#### NewsApi
+##### NewsApi
  - [NewsApi]
 
-#### Android Devs Buenos Aires
+##### Android Devs Buenos Aires
 - [Android Devs Buenos Aires Meetup][adevsBAMeetup]
 - [Android Devs Buenos Aires Twitter][adevsBATwitter]
 
